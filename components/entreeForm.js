@@ -39,7 +39,7 @@ function EntreeForm({ obj }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (obj.firebaseKey) {
-      updateEntree(formInput).then(() => router.push(`/entrees/${obj.firebaseKey}`));
+      updateEntree(formInput).then(() => router.push(`/entree/${obj.firebaseKey}`));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createEntree(payload).then(({ name }) => {

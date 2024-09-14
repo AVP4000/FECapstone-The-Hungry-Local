@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import Link from 'next/link';
 import {
@@ -21,12 +22,12 @@ export default function NavBar() {
               <Nav.Link>Home</Nav.Link>
             </Link>
             <Link passHref href="/restaurants">
-              <Nav.Link>Restaurants</Nav.Link>
+              <Nav.Link>All Restaurants</Nav.Link>
             </Link>
-            <Link passHref href="/entrees">
-              <Nav.Link>Entrees</Nav.Link>
+            <Link passHref href="/restaurant/new">
+              <Nav.Link>Create Restaurant</Nav.Link>
             </Link>
-            <Link passHref href="/create-entrees">
+            <Link passHref href="/entree/new">
               <Nav.Link>Create Entrees</Nav.Link>
             </Link>
             <Button variant="danger" onClick={signOut}>Sign Out</Button>

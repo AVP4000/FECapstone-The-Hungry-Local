@@ -22,7 +22,7 @@ function RestaurantCard({ restaurantObj, onUpdate }) {
         <Link href={`/restaurant/${restaurantObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
-        <Link href={`/restaurants/edit/${restaurantObj.firebaseKey}`} passHref>
+        <Link href={`/restaurant/edit/${restaurantObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
         <Button variant="danger" onClick={deleteThisRestaurant} className="m-2">

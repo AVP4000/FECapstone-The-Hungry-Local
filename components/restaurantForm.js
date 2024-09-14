@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
-import { useAuth } from '../../utils/context/authContext';
-import { createRestaurant, updateRestaurant } from '../../api/restaurantData';
+import { useAuth } from '../utils/context/authContext';
+import { createRestaurant, updateRestaurant } from '../api/restaurantData';
 
 const initialState = {
   restaurant_name: '',
@@ -67,7 +67,7 @@ function RestaurantForm({ obj }) {
           type="url"
           placeholder="Enter an logo url"
           name="logo"
-          value={formInput.image}
+          value={formInput.logo}
           onChange={handleChange}
           required
         />

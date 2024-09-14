@@ -9,11 +9,14 @@ import EntreeCard from '../components/entreeCard';
 function Home() {
   const { user } = useAuth();
   const [entrees, setEntrees] = useState([]);
+
   const getMyEntrees = () => {
     getEntrees(user.uid).then(setEntrees);
   };
-  
-  useEffect(() => {getMyEntrees();}, []);
+
+  useEffect(() => {
+    getMyEntrees();
+  }, []);
 
   return (
     <div
@@ -27,20 +30,19 @@ function Home() {
     >
       <h1>Hello {user.displayName}! Welcome to The Hungry Local</h1>
 
-<div className="text-center my-4">
-<Link href="/entree/new" passHref>
-<Button>Add A entree</Button>
-</Link>
-<Link href="/restaurant/new" passHref>
-<Button>Add A restaurant</Button>
-</Link>
-<div className="d-flex flex-wrap">
-        {entrees.map((entree) => (
-          <EntreeCard key={entree.firebaseKey} entreeObj={entree} onUpdate={getMyEntrees} />
-        ))}
+      <div className="text-center my-4">
+        <Link href="/entree/new" passHref>
+          <Button>Add A entree</Button>
+        </Link>
+        <Link href="/restaurant/new" passHref>
+          <Button>Add A restaurant</Button>
+        </Link>
+        <div className="d-flex flex-wrap">
+          {entrees.map((entree) => (
+            <EntreeCard key={entree.firebaseKey} entreeObj={entree} onUpdate={getMyEntrees} />
+          ))}
+        </div>
       </div>
-    </div>
-
     </div>
   );
 }

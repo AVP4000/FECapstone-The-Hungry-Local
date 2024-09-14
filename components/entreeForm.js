@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
-import { useAuth } from '../../utils/context/authContext';
-import { getRestaurants } from '../../api/restaurantData';
-import { createEntree, updateEntree } from '../../api/entreeData';
+import { useAuth } from '../utils/context/authContext';
+import { getRestaurants } from '../api/restaurantData';
+import { createEntree, updateEntree } from '../api/entreeData';
 
 const initialState = {
   description: '',

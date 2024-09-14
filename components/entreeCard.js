@@ -19,7 +19,7 @@ function EntreeCard({ entreeObj, onUpdate }) {
         <Card.Title>{entreeObj.name}</Card.Title>
         <p className="card-text bold">${entreeObj.price}</p>
         <p className="card-text bold">${entreeObj.quantity}</p>
-        <Link href={`/book/${entreeObj.firebaseKey}`} passHref>
+        <Link href={`/entree/${entreeObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
         <Link href={`/entrees/edit/${entreeObj.firebaseKey}`} passHref>

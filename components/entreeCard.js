@@ -22,7 +22,7 @@ function EntreeCard({ entreeObj, onUpdate }) {
         <Link href={`/entree/${entreeObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
-        <Link href={`/entrees/edit/${entreeObj.firebaseKey}`} passHref>
+        <Link href={`/entree/edit/${entreeObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
         <Button variant="danger" onClick={deleteThisEntree} className="m-2">

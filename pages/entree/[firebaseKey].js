@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { viewEntreeDetails } from '../../api/mergedData';
@@ -14,7 +15,7 @@ export default function ViewEntree() {
   return (
     <div className="mt-5 d-flex flex-wrap">
       <div className="d-flex flex-column">
-        <image
+        <img
           src={entreeDetails.image}
           alt={entreeDetails.name}
           style={{ width: '300px' }}

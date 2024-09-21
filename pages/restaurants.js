@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
@@ -14,7 +15,7 @@ export default function Restaurants() {
   };
 
   useEffect(() => {
-    getRestaurants();
+    getAllRestaurants();
   }, []);
 
   return (

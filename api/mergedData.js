@@ -19,7 +19,7 @@ const viewRestaurantDetails = (firebaseKey) => new Promise((resolve, reject) => 
 });
 
 const deleteRestaurantEntrees = (restaurantId) => new Promise((resolve, reject) => {
-    getRestaurantEntrees(restaurantId).then((entreesArray) => {
+  getRestaurantEntrees(restaurantId).then((entreesArray) => {
     console.warn(entreesArray, 'Restaurants Entrees');
     const deleteEntreesPromises = entreesArray.map((entree) => deleteEntree(entree.firebaseKey));
 

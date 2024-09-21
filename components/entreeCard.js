@@ -13,8 +13,8 @@ function EntreeCard({ entreeObj, onUpdate }) {
   };
 
   return (
-    <Card style={{ width: '200px' }}>
-      <Card.Img variant="top" src={entreeObj.image} alt={entreeObj.name} style={{ height: '150px' }} />
+    <Card style={{ width: '18rem', margin: '10px', borderColor: 'black' }}>
+      <Card.Img variant="top" src={entreeObj.image} alt={entreeObj.name} style={{ height: '300px' }} />
       <Card.Body>
         <Card.Title>{entreeObj.name}</Card.Title>
         <p className="card-text bold"> Price: ${entreeObj.price}</p>

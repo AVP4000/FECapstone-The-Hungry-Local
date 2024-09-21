@@ -9,7 +9,11 @@ import { signOut } from '../utils/auth';
 
 export default function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      style={{ backgroundColor: '#A52A2A' }}
+    >
       <Container>
         <Link passHref href="/">
           <Navbar.Brand>The Hungry Local</Navbar.Brand>

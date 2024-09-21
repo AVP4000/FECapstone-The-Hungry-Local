@@ -13,6 +13,7 @@ function Signin() {
         margin: '0 auto',
       }}
     >
+      <h1>Welcome to The Hungry Local</h1>
       <Button type="button" size="lg" className="copy-btn" onClick={signIn}>
         Sign In
       </Button>

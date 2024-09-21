@@ -1,8 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { viewRestaurantDetails } from '../../api/mergedData';
-import RestaurantCard from '../../components/restaurantCard';
+import EntreeCard from '../../components/entreeCard';
 
 export default function ViewRestaurant() {
   const [restaurantDetails, setRestaurantDetails] = useState({});
@@ -23,12 +22,12 @@ export default function ViewRestaurant() {
         <h5>
           {restaurantDetails.restaurant_name}
         </h5>
-        <a href={`mailto:${restaurantDetails.restaurantObject?.email}`}>
-          {restaurantDetails.restaurantObject?.email}
+        <a href={`mailto:${restaurantDetails.restaurantObj?.email}`}>
+          {restaurantDetails.restaurantObj?.email}
         </a>
         <div>
           {restaurantDetails.entrees?.map((entree) => (
-            <RestaurantCard
+            <EntreeCard
               key={entree.firebaseKey}
               entreeObj={entree}
               onUpdate={getTheRestaurantDetails}

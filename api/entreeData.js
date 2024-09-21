@@ -2,9 +2,8 @@ import { clientCredentials } from '../utils/client';
 
 const endpoint = clientCredentials.databaseURL;
 
-  // GET ENTREE
-const getEntrees = () => new Promise((resolve, reject) => {
-    fetch(`${endpoint}/entrees.json`, {
+const getEntrees = (uid) => new Promise((resolve, reject) => {
+    fetch(`${endpoint}/entrees.json?orderBy="uid"&equalTo="${uid}"`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -15,7 +14,6 @@ const getEntrees = () => new Promise((resolve, reject) => {
       .catch(reject);
   });
   
-  // DELETE ENTREE
   const deleteEntree = (firebaseKey) => new Promise((resolve, reject) => {
     fetch(`${endpoint}/entrees/${firebaseKey}.json`, {
       method: 'DELETE',
@@ -24,11 +22,10 @@ const getEntrees = () => new Promise((resolve, reject) => {
       },
     })
       .then((response) => response.json())
-      .then((data) => resolve((Object.values(data))))
+      .then((data) => resolve((data)))
       .catch(reject);
   });
   
-  // GET SINGLE ENTREE
   const getSingleEntree = (firebaseKey) => new Promise((resolve, reject) => {
     fetch(`${endpoint}/entrees/${firebaseKey}.json`, {
       method: 'GET',
@@ -40,8 +37,6 @@ const getEntrees = () => new Promise((resolve, reject) => {
       .then((data) => resolve(data))
       .catch(reject);
   });
-  
-  // CREATE ENTREE
   
   const createEntree = (payload) => new Promise((resolve, reject) => {
     fetch(`${endpoint}/entrees.json`, {

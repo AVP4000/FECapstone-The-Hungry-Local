@@ -22,7 +22,7 @@ export default function NavBar() {
               <Nav.Link>Home</Nav.Link>
             </Link>
             <Link passHref href="/restaurants">
-              <Nav.Link>All Restaurants</Nav.Link>
+              <Nav.Link>My Restaurants</Nav.Link>
             </Link>
             <Link passHref href="/restaurant/new">
               <Nav.Link>Create Restaurant</Nav.Link>

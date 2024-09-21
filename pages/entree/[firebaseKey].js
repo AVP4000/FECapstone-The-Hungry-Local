@@ -23,17 +23,18 @@ export default function ViewEntree() {
       </div>
       <div className="text-white ms-5 details">
         <h5>
-          {entreeDetails.name} made by {entreeDetails.restaurantObject?.restaurantObject_name}
-        </h5> Restaurant Email:
-        <a href={`mailto:${entreeDetails.restaurantObject?.email}`}>
-          {entreeDetails.restaurantObject?.email}
+          {entreeDetails.name} made by {entreeDetails.restaurantObj?.restaurant_name}
+        </h5>
+        Restaurant Email:
+        <a href={`mailto:${entreeDetails.restaurantObj?.email}`}>
+          {entreeDetails.restaurantObj?.email}
         </a>
-        <p>{entreeDetails.description || ''}</p>
+        <p>Description: {entreeDetails.description || ''}</p>
         <hr />
         <p>
-          {entreeDetails.quantity}
-          {entreeDetails.price}
+          Quantity Available: {entreeDetails.quantity}
         </p>
+        <p> Price: ${entreeDetails.price}</p>
       </div>
     </div>
   );

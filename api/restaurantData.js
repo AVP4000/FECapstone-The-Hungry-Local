@@ -2,9 +2,8 @@ import { clientCredentials } from '../utils/client';
 
 const endpoint = clientCredentials.databaseURL;
 
-//  GET ALL RESTAURANTS
-const getRestaurants = () => new Promise((resolve, reject) => {
-    fetch(`${endpoint}/restaurants.json`, {
+const getRestaurants = (uid) => new Promise((resolve, reject) => {
+    fetch(`${endpoint}/restaurants.json?orderBy="uid"&equalTo="${uid}"`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -21,7 +20,6 @@ const getRestaurants = () => new Promise((resolve, reject) => {
       .catch(reject);
   });
   
-  //  CREATE RESTAURANTS
   const createRestaurant = (payload) => new Promise((resolve, reject) => {
     fetch(`${endpoint}/restaurants.json`, {
       method: 'POST',
@@ -35,7 +33,6 @@ const getRestaurants = () => new Promise((resolve, reject) => {
       .catch(reject);
   });
   
-  //  GET SINGLE AUTHOR
   const getSingleRestaurant = (firebaseKey) => new Promise((resolve, reject) => {
     fetch(`${endpoint}/restaurants/${firebaseKey}.json`, {
       method: 'GET',
@@ -48,7 +45,6 @@ const getRestaurants = () => new Promise((resolve, reject) => {
       .catch(reject);
   });
   
-  //  DELETE AUTHOR
   const deleteSingleRestaurant = (firebaseKey) => new Promise((resolve, reject) => {
     fetch(`${endpoint}/restaurants/${firebaseKey}.json`, {
       method: 'DELETE',
@@ -57,11 +53,10 @@ const getRestaurants = () => new Promise((resolve, reject) => {
       },
     })
       .then((response) => response.json())
-      .then((data) => resolve(Object.values(data)))
+      .then((data) => resolve(data))
       .catch(reject);
   });
-  
-  //  UPDATE AUTHOR
+
   const updateRestaurant = (payload) => new Promise((resolve, reject) => {
     fetch(`${endpoint}/restaurants/${payload.firebaseKey}.json`, {
       method: 'PATCH',
@@ -74,8 +69,7 @@ const getRestaurants = () => new Promise((resolve, reject) => {
       .then((data) => resolve(data))
       .catch(reject);
   });
-  
-  // GET A SINGLE RESTAURANT'S ENTREES
+
   const getRestaurantEntrees = (firebaseKey) => new Promise((resolve, reject) => {
     fetch(`${endpoint}/entrees.json?orderBy="restaurant_id"&equalTo="${firebaseKey}"`, {
       method: 'GET',

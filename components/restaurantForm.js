@@ -51,48 +51,20 @@ function RestaurantForm({ obj }) {
       <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Restaurant</h2>
 
       <FloatingLabel controlId="floatingInput21" label="Restaurant Name" className="mb-3">
-        <Form.Control
-          type="text"
-          placeholder="Restaurant Name"
-          name="restaurant_name"
-          value={formInput.first_name}
-          onChange={handleChange}
-          required
-        />
+        <Form.Control type="text" placeholder="Restaurant Name" name="restaurant_name" value={formInput.first_name} onChange={handleChange} required />
       </FloatingLabel>
 
       {/* IMAGE INPUT  */}
       <FloatingLabel controlId="floatingInput2" label="Logo" className="mb-3">
-        <Form.Control
-          type="url"
-          placeholder="Enter an logo url"
-          name="logo"
-          value={formInput.logo}
-          onChange={handleChange}
-          required
-        />
+        <Form.Control type="url" placeholder="Enter an logo url" name="logo" value={formInput.logo} onChange={handleChange} required />
       </FloatingLabel>
 
       <FloatingLabel controlId="floatingInput23" label="Email" className="mb-3">
-        <Form.Control
-          type="text"
-          placeholder="Restaurant Email"
-          name="email"
-          value={formInput.email}
-          onChange={handleChange}
-          required
-        />
+        <Form.Control type="text" placeholder="Restaurant Email" name="email" value={formInput.email} onChange={handleChange} required />
       </FloatingLabel>
 
       <FloatingLabel controlId="floatingInput22" label="Bio" className="mb-3">
-        <Form.Control
-          type="text"
-          placeholder="Restaurant Bio"
-          name="bio"
-          value={formInput.bio}
-          onChange={handleChange}
-          required
-        />
+        <Form.Control type="text" placeholder="Restaurant Bio" name="bio" value={formInput.bio} onChange={handleChange} required />
       </FloatingLabel>
 
       {/* SUBMIT BUTTON  */}

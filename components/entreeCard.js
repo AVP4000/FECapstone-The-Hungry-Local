@@ -13,12 +13,12 @@ function EntreeCard({ entreeObj, onUpdate }) {
   };
 
   return (
-    <Card style={{ width: '18rem', margin: '10px' }}>
-      <Card.Img variant="top" src={entreeObj.image} alt={entreeObj.name} style={{ height: '400px' }} />
+    <Card style={{ width: '200px' }}>
+      <Card.Img variant="top" src={entreeObj.image} alt={entreeObj.name} style={{ height: '150px' }} />
       <Card.Body>
         <Card.Title>{entreeObj.name}</Card.Title>
-        <p className="card-text bold">${entreeObj.price}</p>
-        <p className="card-text bold">${entreeObj.quantity}</p>
+        <p className="card-text bold"> Price: ${entreeObj.price}</p>
+        <p className="card-text bold">Quantity Available: {entreeObj.quantity}</p>
         <Link href={`/entree/${entreeObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
@@ -37,7 +37,7 @@ EntreeCard.propTypes = {
   entreeObj: PropTypes.shape({
     image: PropTypes.string,
     name: PropTypes.string,
-    quantity: PropTypes.bool,
+    quantity: PropTypes.string,
     price: PropTypes.string,
     firebaseKey: PropTypes.string,
   }).isRequired,

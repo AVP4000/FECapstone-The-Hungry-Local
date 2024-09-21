@@ -1,18 +1,18 @@
 import { getRestaurantEntrees, getSingleRestaurant, deleteSingleRestaurant } from './restaurantData';
 import { getSingleEntree, deleteEntree } from './entreeData';
 
-const viewEntreeDetails = (entreeFirebaseKey) => new Promise((resolve, reject) => {
-  getSingleEntree(entreeFirebaseKey)
-    .then((entreeObject) => {
-      getSingleRestaurant(restaurantObject.restaurant_id)
-        .then((restaurantObject) => {
-          resolve({ restaurantObject, ...entreeObject });
+const viewEntreeDetails = (firebaseKey) => new Promise((resolve, reject) => {
+  getSingleEntree(firebaseKey)
+    .then((entreeObj) => {
+      getSingleRestaurant(entreeObj.restaurant_id)
+        .then((restaurantObj) => {
+          resolve({ restaurantObj, ...entreeObj });
         });
     }).catch((error) => reject(error));
 });
 
-const viewRestaurantDetails = (restaurantFirebaseKey) => new Promise((resolve, reject) => {
-  Promise.all([getSingleRestaurant(restaurantFirebaseKey), getRestaurantEntrees(restaurantFirebaseKey)])
+const viewRestaurantDetails = (firebaseKey) => new Promise((resolve, reject) => {
+  Promise.all([getSingleRestaurant(firebaseKey), getRestaurantEntrees(firebaseKey)])
     .then(([restaurantObject, restaurantsEntreesArray]) => {
       resolve({ ...restaurantObject, entrees: restaurantsEntreesArray });
     }).catch((error) => reject(error));

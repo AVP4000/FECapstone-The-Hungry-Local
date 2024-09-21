@@ -19,29 +19,21 @@ function Home() {
   }, []);
 
   return (
-    <div
-      className="text-center d-flex flex-column justify-content-center align-content-center"
-      style={{
-        height: '90vh',
-        padding: '30px',
-        maxWidth: '400px',
-        margin: '0 auto',
-      }}
-    >
+    <div>
       <h1>Hello {user.displayName}! Welcome to The Hungry Local</h1>
 
-      <div className="text-center my-4">
+      <div className="text-center d-flex flex-column justify-content-center align-content-center">
         <Link href="/entree/new" passHref>
           <Button>Add A entree</Button>
         </Link>
         <Link href="/restaurant/new" passHref>
           <Button>Add A restaurant</Button>
         </Link>
-        <div className="d-flex flex-wrap">
-          {entrees.map((entree) => (
-            <EntreeCard key={entree.firebaseKey} entreeObj={entree} onUpdate={getMyEntrees} />
-          ))}
-        </div>
+      </div>
+      <div className="d-flex flex-wrap">
+        {entrees.map((entree) => (
+          <EntreeCard key={entree.firebaseKey} entreeObj={entree} onUpdate={getMyEntrees} />
+        ))}
       </div>
     </div>
   );

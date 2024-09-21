@@ -3,17 +3,19 @@ import Link from 'next/link';
 import { Button } from 'react-bootstrap';
 import { getRestaurants } from '../api/restaurantData';
 import RestaurantCard from '../components/restaurantCard';
+import { useAuth } from '../utils/context/authContext';
 
 export default function Restaurants() {
   const [restaurants, setRestaurants] = useState([]);
+  const { user } = useAuth();
 
   const getAllRestaurants = () => {
-    getRestaurants().then(setRestaurants);
+    getRestaurants(user.uid).then(setRestaurants);
   };
 
   useEffect(() => {
-    getAllRestaurants();
-  }, []); // Added empty dependency array
+    getRestaurants();
+  }, []);
 
   return (
     <div className="text-center my-4">

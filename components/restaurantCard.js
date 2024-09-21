@@ -17,8 +17,8 @@ function RestaurantCard({ restaurantObj, onUpdate }) {
       <Card.Img variant="top" src={restaurantObj.logo} alt={restaurantObj.restaurant_name} style={{ height: '400px' }} />
       <Card.Body>
         <Card.Title>{restaurantObj.restaurant_name}</Card.Title>
-        <p className="card-text bold">{restaurantObj}.email</p>
-        <p className="card-text bold">{restaurantObj}.bio</p>
+        <p className="card-text bold">{restaurantObj.email}</p>
+        <p className="card-text bold">{restaurantObj.bio}</p>
         <Link href={`/restaurant/${restaurantObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>

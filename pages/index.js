@@ -8,7 +8,8 @@ function Home() {
 
   return (
     <div>
-      <h1>Hello {user.displayName}! Welcome to The Hungry Local</h1>
+      <h1>Hello {user.displayName}!</h1>
+      <h2>Welcome to The Hungry Local</h2>
       <br />
       <br />
       <div className="text-center d-flex justify-content-center align-content-center">

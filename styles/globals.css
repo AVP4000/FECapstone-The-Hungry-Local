@@ -13,22 +13,24 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  color: white
+}
+h2 {
+  color: white;
+}
 * {
   box-sizing: border-box;
 }
 
-body {
-  background-color: #58aa72;
-}
-
-body::after {
+body::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(/public/webImages/Background.png);
+  background-image: url("../public/webImages/Background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -38,4 +40,19 @@ body::after {
 nav {
   font-family: 'Oleo Script', cursive !important;
   color: whitesmoke;
+}
+
+.dimming-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(2, 2, 2, 0.5); /* Adjust opacity to dim */
+  z-index: 0; /* Ensure this is above the background image */
+}
+
+.content {
+  position: relative; /* Ensure content is above the overlay */
+  z-index: 1; /* Bring content above the dimming layer */
 }
